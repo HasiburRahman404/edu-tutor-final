@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduTutor BD — রেজিস্ট্রেশন</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="auth-page">
+  <div class="auth-container">
+    <div class="auth-header">
+      <a href="/index.html" class="back-link">← ফিরে যাও</a>
+      <h2>নতুন অ্যাকাউন্ট</h2>
+      <p>EduTutor BD-তে যোগ দাও</p>
+    </div>
+    <div class="auth-card">
+      <div id="error-msg"   class="alert alert-error"   style="display:none"></div>
+      <div id="success-msg" class="alert alert-success" style="display:none"></div>
+      <div class="form-group">
+        <label>পূর্ণ নাম</label>
+        <input type="text" id="name" placeholder="আপনার নাম লিখুন">
+      </div>
+      <div class="form-group">
+        <label>ইমেইল</label>
+        <input type="email" id="email" placeholder="email@example.com">
+      </div>
+      <div class="form-group">
+        <label>পাসওয়ার্ড</label>
+        <input type="password" id="password" placeholder="কমপক্ষে ৬ অক্ষর">
+      </div>
+      <div class="form-group">
+        <label>আপনি কে?</label>
+        <div class="toggle-group">
+          <button class="toggle-btn active" id="role-student" onclick="setRole('student')">👨‍🎓 শিক্ষার্থী</button>
+          <button class="toggle-btn"        id="role-admin"   onclick="setRole('admin')">🔐 Admin</button>
+        </div>
+      </div>
+      <div class="form-group" id="grade-group">
+        <label>শ্রেণি</label>
+        <div class="toggle-group">
+          <button class="toggle-btn active" id="grade-SSC">SSC</button>
+        </div>
+      </div>
+      <div class="form-group" id="admin-code-group" style="display:none">
+        <label>Admin Code</label>
+        <input type="password" id="admin-code" placeholder="Admin secret code দিন">
+      </div>
+      <button class="btn btn-primary" id="register-btn" onclick="handleRegister()">রেজিস্ট্রেশন করুন</button>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/api.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>

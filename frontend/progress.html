@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduTutor BD — অগ্রগতি</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="main-page">
+  <nav class="navbar">
+    <div class="nav-logo"><a href="home.html">← হোম</a></div>
+    <div class="nav-user">📊 আমার অগ্রগতি</div>
+  </nav>
+  <div class="main-container">
+    <div id="loading-progress" class="loading">
+      <div class="spinner"></div>
+      <p>লোড হচ্ছে...</p>
+    </div>
+    <div id="progress-content" style="display:none">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" id="total-sessions">০</div>
+          <div class="stat-label">মোট সেশন</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="avg-score">০%</div>
+          <div class="stat-label">গড় স্কোর</div>
+        </div>
+      </div>
+      <h3>বিষয় অনুযায়ী অগ্রগতি</h3>
+      <div id="subject-progress" class="subject-progress-list"></div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/api.js"></script>
+  <script src="js/progress.js"></script>
+</body>
+</html>

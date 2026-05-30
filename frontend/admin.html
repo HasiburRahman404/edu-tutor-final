@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduTutor BD — Admin Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="main-page">
+  <nav class="navbar">
+    <div class="nav-logo">📚 EduTutor BD — Admin</div>
+    <div class="nav-user">
+      <span id="admin-name">Admin</span>
+      <button class="btn btn-sm" onclick="logout()">লগআউট</button>
+    </div>
+  </nav>
+  <div class="main-container">
+    <div class="welcome-section">
+      <h1>🔐 Admin Dashboard</h1>
+      <p>সকল শিক্ষার্থীর অগ্রগতি</p>
+    </div>
+    <div id="loading-admin" class="loading">
+      <div class="spinner"></div>
+      <p>লোড হচ্ছে...</p>
+    </div>
+    <div id="admin-content" style="display:none">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" id="total-students">০</div>
+          <div class="stat-label">মোট শিক্ষার্থী</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="total-sessions">০</div>
+          <div class="stat-label">মোট সেশন</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="overall-avg">০%</div>
+          <div class="stat-label">গড় স্কোর</div>
+        </div>
+      </div>
+      <h3 style="margin:24px 0 12px;color:var(--green-dark)">শিক্ষার্থীদের তালিকা</h3>
+      <div id="student-list"></div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/api.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

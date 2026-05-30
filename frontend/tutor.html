@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduTutor BD — টিউটর</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="main-page">
+  <nav class="navbar">
+    <div class="nav-logo"><a href="home.html">← হোম</a></div>
+    <div class="nav-user"><span id="subject-title">পদার্থবিজ্ঞান</span></div>
+  </nav>
+  <div class="main-container">
+    <div id="chapter-section">
+      <h2>অধ্যায় বেছে নাও</h2>
+      <div id="chapter-list" class="chapter-grid"></div>
+    </div>
+    <div id="question-section" style="display:none">
+      <div class="question-card">
+        <div class="question-meta">
+          <span id="bloom-badge" class="badge">মনে রাখো</span>
+          <span id="marks-badge" class="badge badge-green">৫ নম্বর</span>
+        </div>
+        <div id="loading-question" class="loading">
+          <div class="spinner"></div>
+          <p>প্রশ্ন তৈরি হচ্ছে...</p>
+        </div>
+        <p id="question-text" class="question-text" style="display:none"></p>
+        <div id="hints-section" style="display:none">
+          <button class="btn btn-sm btn-outline" onclick="showHint()">💡 সাহায্য নাও</button>
+          <p id="hint-text" class="hint-text" style="display:none"></p>
+        </div>
+      </div>
+      <div class="answer-section">
+        <label>তোমার উত্তর:</label>
+        <textarea id="answer-input" placeholder="এখানে উত্তর লেখো..." rows="5"></textarea>
+        <button class="btn btn-primary" id="submit-btn" onclick="submitAnswer()">উত্তর জমা দাও</button>
+      </div>
+      <div id="feedback-section" style="display:none" class="feedback-card">
+        <div id="score-display" class="score-display"></div>
+        <p id="feedback-text"></p>
+        <p id="correct-answer" class="correct-answer"></p>
+        <p id="encouragement-text" class="encouragement"></p>
+        <div class="feedback-actions">
+          <button class="btn btn-primary" onclick="nextQuestion()">পরের প্রশ্ন →</button>
+          <button class="btn btn-outline" onclick="getFollowup()">এই বিষয়ে আরো জানি</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/api.js"></script>
+  <script src="js/tutor.js"></script>
+</body>
+</html>
